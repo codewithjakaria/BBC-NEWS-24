@@ -1,10 +1,14 @@
 import MarqueeText from 'react-marquee-text';
 import 'react-marquee-text/dist/styles.css';
+interface Marquee{
+  id: string,
+  title:string
+}
 const Marquee = async () => {
   const res = await fetch('https://news-api-v2.vercel.app/api/news?limit=10');
   const data = await res.json();
   console.log(data);
-  const filterMarquee = data.data;
+  const filterMarquee:Marquee[] = data.data;
   console.log(filterMarquee);
   return (
     <div className='bg-red-700 text-white'>
