@@ -7,9 +7,7 @@ interface Marquee{
 const Marquee = async () => {
   const res = await fetch('https://news-api-v2.vercel.app/api/news?limit=10');
   const data = await res.json();
-  console.log(data);
   const filterMarquee:Marquee[] = data.data;
-  console.log(filterMarquee);
   return (
     <div className='bg-red-700 text-white'>
       <div className= " flex items-center max-w-7xl mx-auto">
